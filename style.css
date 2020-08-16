@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* font-family: "Bungee Shade", cursive; */
+    font-family: "Righteous", cursive;
+}
+
+/*Main*/
+.main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/*Game container*/
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+/*Logo*/
+
+.logo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 10px 0px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+}
+
+/*Scoreline*/
+
+.scoreline {
+    height: 150px;
+    width: 700px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.counterLeft {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-items: space-around;
+    align-items: center;
+}
+
+.counterRight {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: space-around;
+}
+
+.counter {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+#counterPlayer1 {
+    background-color: #ff3333;
+    margin: 10px 0px;
+}
+
+#counterPlayer2 {
+    background-color: #ffff1a;
+    margin: 10px 0px;
+}
+
+.scoreline p {
+    font-size: 1.5rem;
+}
+
+.divider {
+    height: 10px;
+    width: 700px;
+}
+
+/*Connect Four*/
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.connectFour {
+    display: flex;
+}
+
+.slot {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+
+.hole {
+    width: 80%;
+    height: 80%;
+    border: 30px solid #007b70;
+    border-radius: 50%;
+    position: relative;
+    left: -20%;
+    top: -20%;
+    z-index: 2;
+}
+
+[id="0"] {
+    border-top-left-radius: 10px;
+}
+
+[id="5"] {
+    border-bottom-left-radius: 10px;
+}
+
+[id="36"] {
+    border-top-right-radius: 10px;
+}
+
+[id="41"] {
+    border-bottom-right-radius: 10px;
+}
+
+.coin {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 1;
+}
+
+.coinPlayer1 {
+    background-color: #ff3333;
+    background: radial-gradient(
+        circle at center,
+        #ff3333 19px,
+        #ff6666 20px,
+        #ff3333 21px,
+        #ff3333 40px
+    );
+}
+
+.coinPlayer2 {
+    background-color: #ffff1a;
+    background: radial-gradient(
+        circle at center,
+        #ffff1a 19px,
+        #ffdb4d 20px,
+        #ffff1a 21px,
+        #ffff1a 40px
+    );
+}
+
+.player1 {
+    background-color: white;
+    z-index: -1;
+}
+
+.player2 {
+    background-color: white;
+    z-index: -1;
+}
+
+.drop {
+    animation-name: drop-animation;
+    animation-duration: 500ms;
+}
+
+@keyframes drop-animation {
+    from {
+        transform: translateY(-500px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/*Modal Dialog*/
+.victoryDialog {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    visibility: hidden;
+}
+
+.textPopUp {
+    position: absolute;
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.textPopUp h3 {
+    margin: 10px;
+}
+
+#replayButton {
+    width: 50%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: outset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#replayButton p {
+    font-weight: bold;
+}
+
+/*Fireworks animation*/
+
+canvas {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    margin: 0;
+    padding: 0;
+}
